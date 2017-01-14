@@ -37,9 +37,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v){
         Intent intent = new Intent(this,SecondActivity.class);
+
+        double value1_d = Double.parseDouble((mEditText1.getText().toString()));
+        double value2_d = Double.parseDouble((mEditText2.getText().toString()));
+        double goukei = 0.0;
+
         Log.d("test",(mEditText1.getText().toString()));
-        intent.putExtra("VALUE1",(mEditText1.getText().toString()));
-        intent.putExtra("VALUE2",(mEditText2.getText().toString()));
+        if (v.getId() == R.id.button1){
+            goukei = value1_d + value2_d;
+        } else if(v.getId() == R.id.button2){
+            goukei = value1_d - value2_d;
+        } else if(v.getId() == R.id.button3){
+            goukei = value1_d * value2_d;
+        } else if(v.getId() == R.id.button4){
+            goukei = value1_d / value2_d;
+        }
+        intent.putExtra("VALUE1",goukei);
         startActivity(intent);
     }
 }

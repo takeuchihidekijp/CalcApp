@@ -13,10 +13,9 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         Intent intent = getIntent();
-        String value1 = intent.getStringExtra("VALUE1");
-        String value2 = intent.getStringExtra("VALUE2");
+        double value = intent.getDoubleExtra("VALUE1",0.0);
 
         TextView textView = (TextView) findViewById(R.id.textView);
-        textView.setText(String.valueOf(value1 + value2));
+        textView.setText(String.valueOf(value));
     }
 }
